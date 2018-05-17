@@ -1,0 +1,13 @@
+{
+    "name": "Craft/Colormixer",
+    "type": "craft-package",
+    "description": "craft Package",
+    "keywords": ["craft", "color", "Colormixer"],
+    "homepage": "https://github.com/ethercreative/colormixer",
+    "license": "GPL-2.0",
+    "autoload": {
+        "psr-4": {
+            "Craft": "twigextensions/"
+        }
+    }
+}
