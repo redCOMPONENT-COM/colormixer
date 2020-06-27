@@ -9,10 +9,7 @@
 
 namespace Craft;
 
-use Twig_Extension;
-use Twig_Filter_Method;
-
-class ColorMixerTwigExtension extends Twig_Extension {
+class ColorMixerTwigExtension extends \Twig\Extension\AbstractExtension {
 
 	/**
 	 * Auto darkens/lightens by 10%.
@@ -29,16 +26,16 @@ class ColorMixerTwigExtension extends Twig_Extension {
 	public function getFilters()
 	{
 		return array(
-			'hexToHsl' => new Twig_Filter_Method($this, 'hexToHsl'),
-			'hexToRgb' => new Twig_Filter_Method($this, 'hexToRgb'),
-			'darken' => new Twig_Filter_Method($this, 'darken'),
-			'lighten' => new Twig_Filter_Method($this, 'lighten'),
-			'mix' => new Twig_Filter_Method($this, 'mix'),
-			'isLight' => new Twig_Filter_Method($this, 'isLight'),
-			'isDark' => new Twig_Filter_Method($this, 'isDark'),
-			'complementary' => new Twig_Filter_Method($this, 'complementary'),
-			'gradientColors' => new Twig_Filter_Method($this, 'gradientColors'),
-			'gradient' => new Twig_Filter_Method($this, 'gradient'),
+			'hexToHsl' => new \Twig\TwigFilter('hexToHsl', [$this, 'hexToHsl']),
+			'hexToRgb' => new \Twig\TwigFilter('hexToRgb', [$this, 'hexToRgb']),
+			'darken' => new \Twig\TwigFilter('darken', [$this, 'darken']),
+			'lighten' => new \Twig\TwigFilter('lighten', [$this, 'lighten']),
+			'mix' => new \Twig\TwigFilter('mix', [$this, 'mix']),
+			'isLight' => new \Twig\TwigFilter('isLight', [$this, 'isLight']),
+			'isDark' => new \Twig\TwigFilter('isDark', [$this, 'isDark']),
+			'complementary' => new \Twig\TwigFilter('complementary', [$this, 'complementary']),
+			'gradientColors' => new \Twig\TwigFilter('gradientColors', [$this, 'gradientColors']),
+			'gradient' => new \Twig\TwigFilter('gradient', [$this, 'gradient']),
 		);
 	}
 
